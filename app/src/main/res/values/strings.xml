@@ -5,5 +5,6 @@
     <string name="numberTwo">Number two</string>
     <string name="action">Action</string>
     <string name="result">Result</string>
+    <string name="reset">Reset</string>
 
 </resources>

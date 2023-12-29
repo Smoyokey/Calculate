@@ -41,7 +41,7 @@ class CalculateViewModel : ViewModel() {
         result()
     }
 
-    private fun reset() {
+    fun reset() {
         _uiState.value = CalculateUiState()
     }
 

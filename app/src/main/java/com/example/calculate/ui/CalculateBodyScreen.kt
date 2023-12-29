@@ -71,6 +71,14 @@ fun CalculateBodyScreen(
             value = uiState.result,
             onValueChange = {}
         )
+
+        Button(
+            onClick = {
+                viewModel.reset()
+            }
+        ) {
+            Text(text = stringResource(R.string.reset))
+        }
     }
 }
 
