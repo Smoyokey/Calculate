@@ -41,6 +41,10 @@ class CalculateViewModel : ViewModel() {
         result()
     }
 
+    private fun reset() {
+        _uiState.value = CalculateUiState()
+    }
+
     private fun result() {
         _uiState.update {result ->
             if(uiState.value.numberOne != "" && uiState.value.numberTwo != "") {
