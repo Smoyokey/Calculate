@@ -21,13 +21,14 @@ fun CalculateApp(
         topBar = {}
     ) { _ ->
         CalculateBodyScreen(
-            uiState = uiState,
-            onValueChangeNumberOne = { numberOne ->
-                viewModel.enterNumberOne(numberOne)
-            },
-            onValueChangeNumberTwo = {numberTwo ->
-                viewModel.enterNumberTwo(numberTwo)
-            },
+//            uiState = uiState,
+//            onValueChangeNumberOne = { numberOne ->
+//                viewModel.enterNumberOne(numberOne)
+//            },
+//            onValueChangeNumberTwo = {numberTwo ->
+//                viewModel.enterNumberTwo(numberTwo)
+//            },
+            viewModel = viewModel
         )
     }
 }

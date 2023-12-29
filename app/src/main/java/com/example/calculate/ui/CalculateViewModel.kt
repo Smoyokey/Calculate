@@ -32,6 +32,15 @@ class CalculateViewModel : ViewModel() {
         result()
     }
 
+    fun clickAction(actions: Action) {
+        _uiState.update { action ->
+            action.copy(
+                action = actions
+            )
+        }
+        result()
+    }
+
     private fun result() {
         _uiState.update {result ->
             if(uiState.value.numberOne != "" && uiState.value.numberTwo != "") {
@@ -44,9 +53,6 @@ class CalculateViewModel : ViewModel() {
                     result = "${uiState.value.numberOne} ${uiState.value.action.sign} ${uiState.value.numberTwo} = "
                 )
             }
-            result.copy(
-                result = uiState.value.numberOne + " " + uiState.value.action.sign + " " + uiState.value.numberTwo
-            )
         }
     }
 
