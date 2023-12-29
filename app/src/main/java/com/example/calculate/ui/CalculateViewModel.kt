@@ -45,18 +45,12 @@ class CalculateViewModel : ViewModel() {
         _uiState.value = CalculateUiState()
     }
 
-    private fun result() {
-        _uiState.update {result ->
-            if(uiState.value.numberOne != "" && uiState.value.numberTwo != "") {
-                result.copy(
-                    result = "${uiState.value.numberOne} ${uiState.value.action.sign} ${uiState.value.numberTwo} = " +
-                            mathAction(uiState.value.action.sign, uiState.value.numberOne, uiState.value.numberTwo)
-                )
-            } else {
-                result.copy(
-                    result = "${uiState.value.numberOne} ${uiState.value.action.sign} ${uiState.value.numberTwo} = "
-                )
-            }
+    fun result(): String {
+        return if(uiState.value.numberOne != "" && uiState.value.numberTwo != "") {
+            "".toRes(uiState.value.numberOne, uiState.value.numberTwo, uiState.value.action) +
+                    mathAction(uiState.value.action.sign, uiState.value.numberOne, uiState.value.numberTwo)
+        } else {
+            "".toRes(uiState.value.numberOne, uiState.value.numberTwo, uiState.value.action)
         }
     }
 
@@ -78,5 +72,8 @@ class CalculateViewModel : ViewModel() {
         }
         return res
     }
+}
 
+fun String.toRes(numberOne: String, numberTwo: String, action: Action): String {
+    return "$numberOne ${action.sign} $numberTwo = "
 }

@@ -39,7 +39,8 @@ fun CalculateBodyScreen(
             value = uiState.numberOne,
             onValueChange = {
                 viewModel.enterNumberOne(it)
-            }
+            },
+            label = { Text(text = stringResource(R.string.writeNumberOne)) }
         )
 
         Text(text = stringResource(id = R.string.action))
@@ -62,13 +63,14 @@ fun CalculateBodyScreen(
             value = uiState.numberTwo,
             onValueChange = {
                 viewModel.enterNumberTwo(it)
-            }
+            },
+            label = { Text(text = stringResource(R.string.writeNumberTwo)) }
         )
 
         Text(text = stringResource(id = R.string.result))
 
         TextField(
-            value = uiState.result,
+            value = viewModel.result(),
             onValueChange = {}
         )
 
