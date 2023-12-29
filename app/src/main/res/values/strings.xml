@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculate</string>
+
+    <string name="numberOne">Number one</string>
+    <string name="numberTwo">Number two</string>
+    <string name="action">Action</string>
+    <string name="result">Result</string>
+
 </resources>
