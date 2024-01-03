@@ -70,6 +70,16 @@ class TestUi {
         composeTestRule.onNodeWithText(" + =").assertIsDisplayed()
     }
 
+    @Test
+    fun testAction_divisionByZero_result() {
+        composeTestRule.onNodeWithStringId(R.string.writeNumberOne).performTextInput("10")
+        composeTestRule.onNodeWithStringId(R.string.writeNumberTwo).performTextInput("0")
+        composeTestRule.onNodeWithText("/").performClick()
+
+        composeTestRule
+            .onNodeWithText("10 / 0 = Denied").assertIsDisplayed()
+    }
+
     private fun startTest(action: String, res: String) {
         composeTestRule.onNodeWithStringId(R.string.writeNumberOne).performTextInput(numberOne)
         composeTestRule.onNodeWithStringId(R.string.writeNumberTwo).performTextInput(numberTwo)
